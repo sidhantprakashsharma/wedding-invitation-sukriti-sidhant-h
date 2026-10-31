@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>शुभ विवाह - सिद्धान्त संग सुकृति</title>
+  
+  <!-- WhatsApp / Open Graph Meta Tags -->
+  <meta property="og:title" content="शुभ विवाह - सिद्धान्त संग सुकृति" />
+  <meta property="og:description" content="आपके स्नेह और आशीर्वाद की अभिलाषा के साथ आपका सादर आमंत्रण है। दिनांक: 02 एवं 03 दिसंबर, 2026" />
+  <meta property="og:image" content="https://sidhantprakashsharma.github.io/wedding-invitation-sidhant-sukriti/wedding-preview.jpg" />
+  <meta property="og:url" content="https://sidhantprakashsharma.github.io/wedding-invitation-sidhant-sukriti/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Preview Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="शुभ विवाह - सिद्धान्त संग सुकृति" />
+  <meta name="twitter:description" content="आपके स्नेह और आशीर्वाद की अभिलाषा के साथ आपका सादर आमंत्रण है। दिनांक: 02 एवं 03 दिसंबर, 2026" />
+  <meta name="twitter:image" content="https://sidhantprakashsharma.github.io/wedding-invitation-sidhant-sukriti/wedding-preview.jpg" />
+
+  <!-- Google Fonts for Original Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Anek+Devanagari:wght@300;400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & Base Canvas Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: #f7f3ed linear-gradient(135deg, #f7f3ed 0%, #ece4d8 50%, #dfd5c4 100%);
+      background-attachment: fixed;
+      font-family: 'Anek Devanagari', sans-serif;
+      color: #2b1f1d;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 12px 60px 12px;
+      overflow-x: hidden;
+    }
+
+    /* Floating Petal Canvas - z-index increased so it renders above the welcome gate */
+    #petal-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10000000;
+    }
+
+    /* Formal Front Cover Gate (Hindi-Only with Extended Ornamental Frame) */
+    #welcome-gate {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #144545 0%, #0f3838 60%, #072222 100%);
+      z-index: 9999999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+      overflow-y: auto;
+    }
+
+    #welcome-gate.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .cover-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 380px;
+      padding: 44px 24px;
+      background: rgba(15, 56, 56, 0.45);
+      border: 1.5px solid rgba(197, 160, 89, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 35px rgba(197, 160, 89, 0.1);
+      margin: auto;
+      z-index: 9999999;
+    }
+
+    /* Elegant Ornamental Corners */
+    .cover-content::before, .cover-content::after {
+      content: '❖';
+      position: absolute;
+      color: #c5a059;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .cover-content::before { top: 12px; left: 14px; }
+    .cover-content::after { top: 12px; right: 14px; }
+
+    .cover-bottom-corners::before, .cover-bottom-corners::after {
+      content: '❖';
+      position: absolute;
+      color: #c5a059;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .cover-bottom-corners::before { bottom: 12px; left: 14px; }
+    .cover-bottom-corners::after { bottom: 12px; right: 14px; }
+
+    .cover-top-sub {
+      font-family: 'Rozha One', serif;
+      color: #f4d06f;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .cover-divider {
+      color: #c5a059;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+
+    .cover-names-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin: 6px 0 14px 0;
+    }
+
+    .cover-name-primary {
+      font-family: 'Rozha One', serif;
+      color: #ffffff;
+      font-size: 2.4rem;
+      line-height: 1.15;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .cover-connector {
+      font-family: 'Noto Serif Devanagari', serif;
+      color: #f4d06f;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 2px 0;
+    }
+
+    .cover-subtitle {
+      font-family: 'Noto Serif Devanagari', serif;
+      color: #d6ccbe;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+
+    .cover-ornament-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin: 10px 0 16px 0;
+    }
+
+    .cover-ornament-box::before,
+    .cover-ornament-box::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c5a059, transparent);
+    }
+
+    .cover-ornament-box span {
+      color: #c5a059;
+      font-size: 0.7rem;
+    }
+
+    .cover-date-badge {
+      font-family: 'Noto Serif Devanagari', serif;
+      color: #f4d06f;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .cover-btn {
+      width: 100%;
+      max-width: 270px;
+      padding: 13px 20px;
+      background: linear-gradient(135deg, #f4d06f 0%, #c5a059 100%);
+      color: #0f3838;
+      font-family: 'Rozha One', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, filter 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .cover-btn:active {
+      transform: scale(0.96);
+      filter: brightness(0.95);
+    }
+
+    /* Video Intro Overlay */
+    #intro-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      z-index: 99999;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+      overflow: hidden;
+    }
+
+    #intro-overlay.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #intro-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Skip Button */
+    .skip-btn {
+      position: fixed;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 11px 26px;
+      background: #ffffff;
+      color: #0f3838;
+      font-family: 'Rozha One', serif;
+      font-size: 0.95rem;
+      border: 1.5px solid #c5a059;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
+      transition: transform 0.2s ease, background 0.2s ease;
+      z-index: 999999;
+    }
+
+    .skip-btn:active {
+      transform: translateX(-50%) scale(0.95);
+      background: #f4ece1;
+    }
+
+    /* Cards Layout Container */
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 9:16 Aspect Ratio Wedding Card Frame */
+    .wedding-card {
+      position: relative;
+      width: calc(100vw - 24px);
+      max-width: 390px;
+      aspect-ratio: 9 / 16;
+      
+      background-image: url('card_background.jpg'), url('card_%20background.jpg'), url('card_ background.jpg');
+      background-position: center center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      
+      border-radius: 8px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      /* Inner Arch Padding */
+      padding: 36% 17% 12% 17%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    /* Original Font Classes Restored Exactly */
+    .card-top-heading {
+      font-family: 'Cinzel', serif;
+      color: #8b6f47;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    .card-title {
+      font-family: 'Yatra One', cursive;
+      color: #0f3838;
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .names-heading {
+      font-family: 'Rozha One', serif;
+      color: #2b1f1d;
+      font-size: 1.6rem;
+      line-height: 1.15;
+    }
+
+    .connector-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: #8b6f47;
+      font-size: 0.95rem;
+    }
+
+    .invitation-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #5a4a42;
+      line-height: 1.35;
+      margin: 2px 0;
+    }
+
+    .event-details-section {
+      width: 100%;
+      padding: 4px 0;
+      position: relative;
+    }
+
+    .ornamental-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin: 2px 0;
+    }
+
+    .ornamental-line::before,
+    .ornamental-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #8b6f47, transparent);
+    }
+
+    .ornamental-line span {
+      color: #8b6f47;
+      font-size: 0.65rem;
+    }
+
+    .event-date {
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      color: #2b1f1d;
+      font-size: 0.8rem;
+    }
+
+    .event-venue {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: #5a4a42;
+      font-size: 0.85rem;
+      margin-top: 1px;
+    }
+
+    .card-bottom-spacer {
+      height: 14px;
+      width: 100%;
+    }
+
+    /* Accordion Timeline Layout */
+    .program-date-header {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #8b6f47;
+      border-bottom: 1px dashed #c5a059;
+      padding-bottom: 2px;
+      width: 100%;
+    }
+
+    .timeline-container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 4px 0;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 12px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, #c5a059 0%, #0f3838 100%);
+    }
+
+    .pearl-node {
+      position: absolute;
+      left: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2.5px solid #0f3838;
+      box-shadow: 0 0 6px rgba(15, 56, 56, 0.5);
+      transition: top 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+      z-index: 2;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 28px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .event-name {
+      font-family: 'Rozha One', serif;
+      color: #726056;
+      font-size: 0.88rem;
+      line-height: 1.2;
+      transition: color 0.3s ease, font-size 0.3s ease;
+    }
+
+    .timeline-item.active-event .event-name {
+      color: #0f3838;
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
+    .event-details-collapsible {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+      margin-top: 0;
+    }
+
+    .timeline-item.active-event .event-details-collapsible {
+      max-height: 80px;
+      opacity: 1;
+      margin-top: 3px;
+    }
+
+    .event-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem;
+      color: #8b6f47;
+      font-weight: 600;
+    }
+
+    .map-link {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: #0f3838;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1px;
+      border-bottom: 1px dotted #0f3838;
+    }
+
+    /* Card 4 - Blessings, Hosts & Contact */
+    .blessing-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #4a3c35;
+      line-height: 1.35;
+    }
+
+    .host-section {
+      width: 100%;
+    }
+
+    .host-title {
+      font-family: 'Cinzel', serif;
+      color: #8b6f47;
+      font-size: 0.78rem;
+    }
+
+    .host-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2b1f1d;
+    }
+
+    .contact-container {
+      width: 100%;
+    }
+
+    .contact-title {
+      font-family: 'Cinzel', serif;
+      color: #8b6f47;
+      font-size: 0.76rem;
+      margin-bottom: 4px;
+    }
+
+    .contact-links-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #0f3838;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dotted #c5a059;
+      padding-bottom: 1px;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .contact-link:active {
+      color: #926d27;
+    }
+
+    .decorative-divider {
+      color: #c5a059;
+      font-size: 0.7rem;
+    }
+
+    /* Toast Notification for Clipboard Copy */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f3838;
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-family: 'Anek Devanagari', sans-serif;
+      border: 1px solid #c5a059;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      z-index: 999999;
+    }
+
+    #toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Petal Canvas Overlay -->
+  <canvas id="petal-canvas"></canvas>
+
+  <!-- Toast Notification -->
+  <div id="toast">नंबर कॉपी हो गया!</div>
+
+  <!-- Background Music Track with cache-buster -->
+  <audio id="bg-audio" src="threads_of_a_sacred_vow.mp3?v=20261030" loop preload="auto"></audio>
+
+  <!-- Formal Hindi-Only Front Cover Gate with Falling Petals and Enhanced Design Elements -->
+  <div id="welcome-gate">
+    <div class="cover-content cover-bottom-corners">
+      <div class="cover-top-sub">शुभ विवाह</div>
+      <div class="cover-divider">❖ ❖ ❖</div>
+      
+      <div class="cover-names-group">
+        <div class="cover-name-primary">सिद्धान्त</div>
+        <div class="cover-connector">संग</div>
+        <div class="cover-name-primary">सुकृति</div>
+      </div>
+
+      <div class="cover-ornament-box"><span>❖</span></div>
+
+      <div class="cover-subtitle">हमारे इस मांगलिक अवसर पर आपका स्वागत है</div>
+
+      <div class="cover-date-badge">दिनांक: 02 एवं 03 दिसंबर, 2026</div>
+
+      <button class="cover-btn" onclick="openInvitation()">॥ निमंत्रण पत्र देखें ॥</button>
+    </div>
+  </div>
+
+  <!-- Video Intro Overlay -->
+  <div id="intro-overlay">
+    <div class="video-container">
+      <video id="intro-video" autoplay muted playsinline preload="auto">
+        <source src="wedding_intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <button class="skip-btn" onclick="dismissIntro()">॥ निमंत्रण पत्र देखें ॥</button>
+  </div>
+
+  <div class="cards-container">
+
+    <!-- CARD 1: HERO / INVITATION -->
+    <div class="wedding-card" id="card-1">
+      <div class="card-top-heading">॥ श्री गणेशाय नमः ॥</div>
+      <div>
+        <div class="card-title">शुभ विवाह निमंत्रण</div>
+        <div class="decorative-divider">❖ ❖ ❖</div>
+      </div>
+      <div>
+        <div class="names-heading">सिद्धान्त</div>
+        <div class="connector-text">संग</div>
+        <div class="names-heading">सुकृति</div>
+      </div>
+      <div class="invitation-quote">
+        आपके स्नेह और आशीर्वाद की अभिलाषा के साथ आपका सादर आमंत्रण है।
+      </div>
+      <div class="event-details-section">
+        <div class="ornamental-line"><span>❖</span></div>
+        <div class="event-date">दिनांक: 02 एवं 03 दिसंबर, 2026</div>
+        <div class="event-venue">स्थान: लोनावला एवं खंडाला</div>
+        <div class="ornamental-line"><span>❖</span></div>
+      </div>
+      <div class="card-bottom-spacer"></div>
+    </div>
+
+    <!-- CARD 2: PROGRAM DAY I -->
+    <div class="wedding-card" id="card-2">
+      <div class="card-top-heading">॥ मंगल कार्य ॥</div>
+      <div class="card-title">कार्यक्रम • प्रथम दिवस</div>
+      <div class="program-date-header">बुधवार, 02 दिसंबर 2026</div>
+      
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="pearl-node" id="pearl-day1" style="top: 2px;"></div>
+        
+        <div class="timeline-item active-event" data-pearl-pos="2">
+          <div class="event-name">गणेश पूजन</div>
+          <div class="event-details-collapsible">
+            <div class="event-time">अपराह्न १:०० बजे</div>
+            <a class="map-link" href="https://maps.google.com/?q=Hotel+Sapphire+Lonavala" target="_blank">होटल सफायर, लोनावला</a>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-pearl-pos="42">
+          <div class="event-name">मंडप स्थापन</div>
+          <div class="event-details-collapsible">
+            <div class="event-time">अपराह्न २:०० बजे</div>
+            <a class="map-link" href="https://maps.google.com/?q=Hotel+Sapphire+Lonavala" target="_blank">होटल सफायर, लोनावला</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-bottom-spacer"></div>
+    </div>
+
+    <!-- CARD 3: PROGRAM DAY II -->
+    <div class="wedding-card" id="card-3">
+      <div class="card-top-heading">॥ शुभ विवाह ॥</div>
+      <div class="card-title">कार्यक्रम • द्वितीय दिवस</div>
+      <div class="program-date-header">गुरुवार, 03 दिसंबर 2026</div>
+      
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="pearl-node" id="pearl-day2" style="top: 2px;"></div>
+        
+        <div class="timeline-item active-event" data-pearl-pos="2">
+          <div class="event-name">मामेरा</div>
+          <div class="event-details-collapsible">
+            <div class="event-time">प्रातः ११:०० बजे</div>
+            <a class="map-link" href="https://maps.google.com/?q=Hotel+Sapphire+Lonavala" target="_blank">होटल सफायर, लोनावला</a>
+          </div>
+        </div>
+        
+        <div class="timeline-item" data-pearl-pos="42">
+          <div class="event-name">शुभ विवाह</div>
+          <div class="event-details-collapsible">
+            <div class="event-time">रात्रि ९:०० बजे से</div>
+            <a class="map-link" href="https://maps.google.com/?q=Amoravida+Khandala" target="_blank">अमोराविडा, खंडाला</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-bottom-spacer"></div>
+    </div>
+
+    <!-- CARD 4: BLESSINGS, HOSTS & CONTACT -->
+    <div class="wedding-card" id="card-4">
+      <div class="card-top-heading">॥ स्नेहाशीष ॥</div>
+      
+      <div class="blessing-quote">
+        "स्वजनों का स्नेह और बड़े-बुजुर्गों का आशीर्वाद ही इस नव-जीवन का वास्तविक संबल है।"
+      </div>
+
+      <div class="decorative-divider">❖ ❖ ❖</div>
+
+      <div class="host-section">
+        <div class="host-title">स्वागतकांक्षी</div>
+        <div class="host-names">साधना एवं ओम प्रकाश शर्मा</div>
+      </div>
+
+      <div class="host-section">
+        <div class="host-title">दर्शनाभिलाषी</div>
+        <div class="host-names">समस्त शर्मा परिवार</div>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-title">॥ संपर्क ॥</div>
+        <div class="contact-links-wrapper">
+          <a class="contact-link" onclick="handlePhoneClick(event, '+917836979821')">+91 78369 79821</a>
+          <a class="contact-link" onclick="handlePhoneClick(event, '+919479817919')">+91 94798 17919</a>
+        </div>
+      </div>
+
+      <div class="card-bottom-spacer"></div>
+    </div>
+
+  </div>
+
+  <script>
+    /* Background Audio & Welcome Gate Trigger with 2-Second Delay */
+    const bgAudio = document.getElementById('bg-audio');
+    const welcomeGate = document.getElementById('welcome-gate');
+    const introOverlay = document.getElementById('intro-overlay');
+    const introVideo = document.getElementById('intro-video');
+
+    if (bgAudio) {
+      bgAudio.currentTime = 0;
+    }
+
+    function openInvitation() {
+      if (bgAudio) {
+        bgAudio.currentTime = 0;
+        bgAudio.play().catch(err => console.log("Audio play error:", err));
+      }
+
+      // Wait for 2 seconds (2000 ms) while playing sound before dismissing gate and opening video
+      setTimeout(() => {
+        if (welcomeGate) {
+          welcomeGate.classList.add('fade-out');
+          setTimeout(() => {
+            welcomeGate.style.display = 'none';
+          }, 800);
+        }
+
+        if (introOverlay) {
+          introOverlay.style.display = 'flex';
+          if (introVideo) {
+            introVideo.play().catch(() => {});
+          }
+        }
+      }, 2000);
+    }
+
+    function dismissIntro() {
+      if (introOverlay) {
+        introOverlay.classList.add('fade-out');
+        setTimeout(() => {
+          introOverlay.style.display = 'none';
+        }, 800);
+      }
+      if (bgAudio && bgAudio.paused) {
+        bgAudio.play().catch(() => {});
+      }
+    }
+
+    if (introVideo) {
+      introVideo.addEventListener('ended', dismissIntro);
+      introVideo.addEventListener('error', dismissIntro);
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (!bgAudio) return;
+      if (document.hidden) {
+        bgAudio.pause();
+      } else {
+        if (welcomeGate && welcomeGate.style.display === 'none') {
+          bgAudio.play().catch(() => {});
+        }
+      }
+    });
+
+    /* Phone Handler with Clipboard Fallback */
+    function handlePhoneClick(e, phoneNum) {
+      e.preventDefault();
+      window.location.href = 'tel:' + phoneNum;
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(phoneNum).then(() => {
+          showToast('नंबर कॉपी हो गया: ' + phoneNum);
+        }).catch(() => {});
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      if (!toast) return;
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    /* Scroll Itinerary Accordion Handler */
+    function updateScrollItinerary() {
+      const viewportCenter = window.innerHeight / 2;
+      processCardItinerary('card-2', 'pearl-day1', viewportCenter);
+      processCardItinerary('card-3', 'pearl-day2', viewportCenter);
+    }
+
+    function processCardItinerary(cardId, pearlId, viewportCenter) {
+      const card = document.getElementById(cardId);
+      const pearl = document.getElementById(pearlId);
+      if (!card || !pearl) return;
+
+      const items = Array.from(card.querySelectorAll('.timeline-item'));
+      const cardRect = card.getBoundingClientRect();
+
+      if (cardRect.bottom < 0 || cardRect.top > window.innerHeight) return;
+
+      let targetIndex = 0;
+      const item1Rect = items[0].getBoundingClientRect();
+      const item1Center = item1Rect.top + item1Rect.height / 2;
+      targetIndex = (viewportCenter > item1Center + 30) ? 1 : 0;
+
+      const activeItem = items[targetIndex];
+      if (activeItem && !activeItem.classList.contains('active-event')) {
+        items.forEach(item => item.classList.remove('active-event'));
+        activeItem.classList.add('active-event');
+
+        const pos = activeItem.getAttribute('data-pearl-pos');
+        if (pos) {
+          pearl.style.top = pos + 'px';
+        }
+      }
+    }
+
+    window.addEventListener('scroll', updateScrollItinerary, { passive: true });
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const card = item.closest('.wedding-card');
+        if (!card) return;
+        
+        const pearlId = card.id === 'card-2' ? 'pearl-day1' : 'pearl-day2';
+        const pearl = document.getElementById(pearlId);
+        
+        card.querySelectorAll('.timeline-item').forEach(i => i.classList.remove('active-event'));
+        item.classList.add('active-event');
+
+        if (pearl) {
+          const pos = item.getAttribute('data-pearl-pos');
+          if (pos) pearl.style.top = pos + 'px';
+        }
+      });
+    });
+
+    window.addEventListener('load', updateScrollItinerary);
+
+    /* Petal Canvas Animation Engine (Slow Motion) */
+    const canvas = document.getElementById('petal-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const PETAL_COUNT = 22;
+    const petals = [];
+
+    const colors = ['#C5A059', '#E5A93B', '#F4D06F', '#D4A373'];
+
+    class Petal {
+      constructor() {
+        this.reset(true);
+      }
+
+      reset(initial = false) {
+        this.x = Math.random() * width;
+        this.y = initial ? Math.random() * height : -20;
+        this.size = Math.random() * 6 + 4;
+        this.speedY = Math.random() * 0.4 + 0.2;
+        this.speedX = Math.random() * 0.3 - 0.15;
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotSpeed = Math.random() * 0.01 - 0.005;
+        this.oscillation = Math.random() * 0.03;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.opacity = Math.random() * 0.45 + 0.35;
+      }
+
+      update() {
+        this.y += this.speedY;
+        this.x += Math.sin(this.y * this.oscillation) + this.speedX;
+        this.rotation += this.rotSpeed;
+
+        if (this.y > height + 20) {
+          this.reset();
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+
+        ctx.beginPath();
+        ctx.moveTo(0, -this.size);
+        ctx.bezierCurveTo(this.size / 2, -this.size / 2, this.size / 2, this.size / 2, 0, this.size);
+        ctx.bezierCurveTo(-this.size / 2, this.size / 2, -this.size / 2, -this.size / 2, 0, -this.size);
+        ctx.fill();
+
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < PETAL_COUNT; i++) {
+      petals.push(new Petal());
+    }
+
+    function animatePetals() {
+      ctx.clearRect(0, 0, width, height);
+      petals.forEach(petal => {
+        petal.update();
+        petal.draw();
+      });
+      requestAnimationFrame(animatePetals);
+    }
+
+    animatePetals();
+  </script>
+</body>
+</html>
